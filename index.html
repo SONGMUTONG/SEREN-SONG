@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>登录 · Seren</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=3">
+</head>
+<body>
+  <div class="auth-layout">
+    <!-- 左侧品牌区域 -->
+    <aside class="auth-brand">
+      <div class="brand-content">
+        <div class="brand-logo">SEREN工作室</div>
+        <h1 class="brand-tagline">创作你的精彩瞬间</h1>
+        <p class="brand-desc"><span class="brand-desc-line">连接灵感，</span><span class="brand-desc-line">释放创造力，</span><span class="brand-desc-line">让每一份作品都闪耀独特光芒。</span></p>
+      </div>
+      <div class="brand-visual">
+        <div class="visual-grid"></div>
+      </div>
+    </aside>
+
+    <!-- 右侧表单区域 -->
+    <main class="auth-form-section">
+      <div class="auth-form-container">
+        <!-- Tab 切换 -->
+        <div class="auth-tabs">
+          <button type="button" class="auth-tab active" data-tab="login" aria-selected="true">登录</button>
+          <button type="button" class="auth-tab" data-tab="register" aria-selected="false">注册</button>
+        </div>
+
+        <!-- 登录表单 -->
+        <form id="login-form" class="auth-form" novalidate>
+          <div class="form-header">
+            <h2 class="form-title">欢迎回来</h2>
+            <p class="form-subtitle">输入你的账号信息以继续</p>
+          </div>
+
+          <div class="form-group">
+            <label for="login-email" class="form-label">邮箱</label>
+            <input
+              type="email"
+              id="login-email"
+              class="form-input"
+              placeholder="olivia@untitledui.com"
+              autocomplete="email"
+              required
+            >
+            <span class="form-error" id="login-email-error"></span>
+          </div>
+
+          <div class="form-group">
+            <div class="form-label-row">
+              <label for="login-password" class="form-label">密码</label>
+              <a href="#" class="form-link">忘记密码？</a>
+            </div>
+            <input
+              type="password"
+              id="login-password"
+              class="form-input"
+              placeholder="请输入密码"
+              autocomplete="current-password"
+              required
+            >
+            <span class="form-error" id="login-password-error"></span>
+          </div>
+
+          <div class="form-group form-group-checkbox">
+            <label class="checkbox-label">
+              <input type="checkbox" name="remember" class="checkbox-input">
+              <span class="checkbox-box"></span>
+              <span class="checkbox-text">记住我</span>
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block">
+            登录
+          </button>
+
+          <div class="form-divider">
+            <span>或使用以下方式继续</span>
+          </div>
+
+          <div class="social-login">
+            <button type="button" class="btn btn-secondary btn-block btn-google">
+              <svg class="btn-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M19.8 10.2273C19.8 9.51819 19.7345 8.83636 19.6145 8.18182H10V12.0491H15.4818C15.2 13.3 14.4545 14.3591 13.3409 15.0682V17.5773H16.7091C18.7091 15.7955 19.8 13.2727 19.8 10.2273Z" fill="#4285F4"/>
+                <path d="M10 20C12.7 20 14.9636 19.1045 16.7091 17.5773L13.3409 15.0682C12.4818 15.6682 11.3455 16.0227 10 16.0227C7.39545 16.0227 5.19091 14.2109 4.40455 11.8H0.963635V14.4909C2.70909 17.9591 6.09091 20 10 20Z" fill="#34A853"/>
+                <path d="M4.40455 11.8C4.20455 11.3 4.09091 10.7591 4.09091 10.1818C4.09091 9.60455 4.20455 9.06364 4.40455 8.56364V5.87273H0.963635C0.354545 7.15455 0 8.52273 0 9.90909C0 11.2955 0.354545 12.6636 0.963635 13.9455L4.40455 11.8Z" fill="#FBBC05"/>
+                <path d="M10 3.97727C11.4682 3.97727 12.7864 4.48182 13.8227 5.47273L16.6909 2.60455C14.9591 0.986364 12.6955 0 10 0C6.09091 0 2.70909 2.04091 0.963635 5.52727L4.40455 8.21818C5.19091 5.80909 7.39545 3.97727 10 3.97727Z" fill="#EA4335"/>
+              </svg>
+              Google 登录
+            </button>
+          </div>
+        </form>
+
+        <!-- 注册表单 -->
+        <form id="register-form" class="auth-form hidden" novalidate>
+          <div class="form-header">
+            <h2 class="form-title">创建账号</h2>
+            <p class="form-subtitle">填写以下信息开始使用</p>
+          </div>
+
+          <div class="form-group">
+            <label for="register-name" class="form-label">姓名</label>
+            <input
+              type="text"
+              id="register-name"
+              class="form-input"
+              placeholder="请输入你的姓名"
+              autocomplete="name"
+              required
+            >
+            <span class="form-error" id="register-name-error"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="register-email" class="form-label">邮箱</label>
+            <input
+              type="email"
+              id="register-email"
+              class="form-input"
+              placeholder="olivia@untitledui.com"
+              autocomplete="email"
+              required
+            >
+            <span class="form-error" id="register-email-error"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="register-password" class="form-label">密码</label>
+            <input
+              type="password"
+              id="register-password"
+              class="form-input"
+              placeholder="至少 8 位字符"
+              autocomplete="new-password"
+              required
+              minlength="8"
+            >
+            <span class="form-error" id="register-password-error"></span>
+          </div>
+
+          <div class="form-group form-group-checkbox">
+            <label class="checkbox-label">
+              <input type="checkbox" name="terms" class="checkbox-input" required>
+              <span class="checkbox-box"></span>
+              <span class="checkbox-text">我同意 <a href="#" class="form-link">服务条款</a> 和 <a href="#" class="form-link">隐私政策</a></span>
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block">
+            创建账号
+          </button>
+        </form>
+      </div>
+
+      <p class="auth-footer">
+        © 2025 Seren 创作空间. 保留所有权利.
+      </p>
+    </main>
+  </div>
+
+  <script src="app.js?v=2"></script>
+</body>
+</html>
