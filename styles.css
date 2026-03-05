@@ -538,3 +538,26 @@ body {
 .auth-form-section {
   position: relative;
 }
+/* 修改后的左侧品牌区：增加背景缩放动画 */
+.auth-brand {
+  /* 保持原有渐变和图片 */
+  background-image: linear-gradient(180deg, rgba(16, 24, 40, 0.6) 0%, rgba(16, 24, 40, 0.75) 50%, rgba(16, 24, 40, 0.85) 100%),
+    url('brand-bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: var(--space-12);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+
+  /* --- 新增：背景呼吸动画 --- */
+  animation: brandBgZoom 20s infinite alternate ease-in-out;
+}
+
+@keyframes brandBgZoom {
+  from { background-size: 100%; }
+  to { background-size: 110%; }
+}
